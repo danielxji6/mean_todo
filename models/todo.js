@@ -2,8 +2,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var TodoSchema = new Schema({
-  // Add Schema details here
-
+  title: String,
+  finish: Boolean,
 });
 
 var Todo = mongoose.model('Todo', TodoSchema);
