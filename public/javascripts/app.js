@@ -1,8 +1,8 @@
 angular
-  .module('yourApp', ['ui.router', 'ngResource'])
+  .module('TodoApp', ['ui.router', 'ngResource'])
   .config(config)
-  .factory('YourFactory', YourFactory)
-  .controller('YourController', YourController);
+  .factory('TodoFactory', TodoFactory)
+  .controller('TodoIndexController', TodoIndexController);
 
 
 /*
@@ -24,7 +24,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('home', {
       url: "/",
       templateUrl: 'templates/todos/index.html',
-      controller: 'YourController',
+      controller: 'TodoIndexController',
       controllerAs: 'index'
     });
   }
@@ -33,17 +33,18 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 /*
 * FACTORY
 */
-YourFactory.$inject = ['$resource'];
-function YourFactory($resource) {
-
+TodoFactory.$inject = ['$resource'];
+function TodoFactory($resource) {
+  var service = {};
+  return service;
 }
 
 
 /*
 * CONTROLLER
 */
-YourController.$inject = ['YourFactory'];
-function YourController (YourFactory) {
+TodoIndexController.$inject = ['TodoFactory'];
+function TodoIndexController (TodoFactory) {
   var vm = this;
   console.log('Your controller!');
 }
